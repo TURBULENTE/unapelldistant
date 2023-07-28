@@ -1,18 +1,18 @@
-/* Este código envía un mensaje por Serial cada vez que cae una gotita en el sensor de agua Fonduino
-    Basado en el ejemplo de:  https://arduinogetstarted.com/tutorials/arduino-water-sensor
-  Manda un "3" por serial cuando un botón está presionado
-  usa un potenciómetro para regular el umbral del sensor de agua
+/* Este código envía un mensaje "1" por Serial cada vez que cae una gotita en el sensor de agua Fonduino.
+Manda un "3" por serial cuando un botón está presionado y usa un potenciómetro para regular el umbral del sensor de agua.
+El Arduino UNO está conectado por SERIAL a una RaspberryPi que con un código de Python lee los mensajes y activa otros procesos.
+Para hacer uso del sensor me he basado en el ejemplo de:  https://arduinogetstarted.com/tutorials/arduino-water-sensor
 */
 
 // Update 20/05/23
 //Mandaremos un número distinto por cada sensor
 
 //BOTON, POTEN y LED 13
-const int ledPin = 13;
-const int inputPin = 9;
-const int potPin = 0;
+const int ledPin = 13; // leda como indicador visual 
+const int inputPin = 9; // sensor 
+const int potPin = 0; // potenciómetro para regular umbral de sensibilidad
 int val; // boton
-int valP; //Poten
+int valP; // variable para el valor del potenciómetro
 
 //SENSOR AGUA
 #define POWER_PIN  7
@@ -63,7 +63,7 @@ void boton() {
   val = digitalRead(inputPin);
   if (val == HIGH)
   {
-    Serial.println(3);
+    Serial.println(3);  
     digitalWrite(ledPin, HIGH);
   }
   else
