@@ -1,5 +1,5 @@
 # unapelldistant
-Aquí se alojan los códigos de la instalación artística "Órbita #3.5 | Una pell distant"  de Citlali Hernández y Núria Nia para la XIII Mostra Sonora i Visual, Convent de Sant Agustí. Junio 2023
+Aquí se alojan los códigos de la instalación artística "Órbita #3.5 | Una pell distant"  de Citlali Hernández y Núria Nia para la XIII Mostra Sonora i Visual, Convent de Sant Agustí. Junio 2023.
 Los códigos de este proyecto fueron desarrollados de manera colaborativa por Citlali Hernández, Iván Paz (https://github.com/ivan-paz) y Júlia Mugica.
 
 # Links del proyecto:
