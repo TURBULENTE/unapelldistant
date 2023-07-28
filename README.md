@@ -7,6 +7,7 @@ https://www.turbulente.net/Una-pell-distant
 
 # Créditos de librerías y herramientas utilizadas:
 Markovify: https://pypi.org/project/markovify/#markovify-in-the-wild
+Water Sensor: https://arduinogetstarted.com/tutorials/arduino-water-sensor
 
 ![_DSC8406__1340_c](https://github.com/TURBULENTE/unapelldistant/assets/19651027/5e53537f-19fb-420c-a2f7-022c0d5bc344)
 
