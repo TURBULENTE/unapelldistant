@@ -14,10 +14,10 @@
 */
 
 /*
-poten: A3,4,5
-sensores: A 0,1,2
+Poten: A3,A4,A5
+sensores: A0,A1,A2
 sensores: 2,3,4
-leds: 10, 11, 12
+leds: 10,11,12
 
 */
 
@@ -98,6 +98,10 @@ void setup() {
   pinMode(RELAY_PIN_A, OUTPUT);
   pinMode(RELAY_PIN_B, OUTPUT);
   pinMode(RELAY_PIN_C, OUTPUT);
+
+  digitalWrite(RELAY_PIN_A, HIGH); // OFF
+  digitalWrite(RELAY_PIN_B, HIGH); // OFF
+  digitalWrite(RELAY_PIN_C, HIGH); // OFF
 }
 
 void loop() {
@@ -144,10 +148,6 @@ void loop() {
   }
   delay(100);
 
-
-  if ((value_A < umbral_A) || (value_B < umbral_B) || (value_B < umbral_B)) {
-    Serial.println(0);
-  }
 }
 
 
@@ -214,7 +214,7 @@ void relay_A() {
         Serial.println(0);
         digitalWrite(RELAY_PIN_A, LOW);
         edoRelay_A = 1;
-      } else if (edoRelay_A == 1) {
+      } else if (edoRelay_A == 0) {
         //Serial.println("Relay_A Off!");
         digitalWrite(RELAY_PIN_A, HIGH);
         edoRelay_A = 0;
@@ -254,8 +254,8 @@ void relay_C() {
     if (edoPrevioSen_C == 0) {
       if (edoRelay_C == 0) {
         //Serial.println("Relay_C On!");
-        Serial.println(2);
         digitalWrite(RELAY_PIN_C, LOW);
+        Serial.println(2);
         edoRelay_C = 1;
       } else if (edoRelay_C == 1) {
         // Serial.println("Relay_C Off!");
