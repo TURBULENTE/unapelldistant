@@ -110,6 +110,44 @@ void loop() {
   relay_A();
   relay_B();
   relay_C();
+
+
+  if (value_A >= umbral_A) {
+    Serial.println(0);
+    digitalWrite(ledPin_A, HIGH);
+    valbol_A = 1;
+  } else {
+    digitalWrite(ledPin_A, LOW);
+    valbol_A = 0;
+  }
+  delay(100);
+
+  if (value_B >= umbral_B) {
+    Serial.println(1);
+    digitalWrite(ledPin_B, HIGH);
+    valbol_B = 1;
+
+  } else {
+    digitalWrite(ledPin_B, LOW);
+    valbol_B = 0;
+  }
+  delay(100);
+
+  if (value_C >= umbral_C) {
+    Serial.println(2);
+    digitalWrite(ledPin_C, HIGH);
+    valbol_C = 1;
+
+  } else {
+    digitalWrite(ledPin_C, LOW);
+    valbol_C = 0;
+  }
+  delay(100);
+
+
+  if ((value_A<umbral_A) || (value_B<umbral_B) || (value_B<umbral_B) ){
+    Serial.println(0);
+  }
 }
 
 
@@ -123,17 +161,6 @@ void sensor_Agua_Gota_A() {
   delay(10);
   value_A = analogRead(SIGNAL_PIN_A);
   digitalWrite(POWER_PIN_A, LOW);
-
-  if (value_A >= umbral_A) {
-    Serial.println(0);
-    digitalWrite(ledPin_A, HIGH);
-    valbol_A = 1;
-  } else {
-    digitalWrite(ledPin_A, LOW);
-    valbol_A = 0;
-  }
-
-  delay(100);
 }
 
 
@@ -143,18 +170,6 @@ void sensor_Agua_Gota_B() {
   delay(10);
   value_B = analogRead(SIGNAL_PIN_B);
   digitalWrite(POWER_PIN_B, LOW);
-
-  if (value_B >= umbral_B) {
-    Serial.println(1);
-    digitalWrite(ledPin_B, HIGH);
-    valbol_B = 1;
-
-  } else {
-    digitalWrite(ledPin_B, LOW);
-    valbol_B = 0;
-  }
-
-  delay(100);
 }
 
 void sensor_Agua_Gota_C() {
@@ -163,18 +178,6 @@ void sensor_Agua_Gota_C() {
   delay(10);
   value_C = analogRead(SIGNAL_PIN_C);
   digitalWrite(POWER_PIN_C, LOW);
-
-  if (value_C >= umbral_C) {
-    Serial.println(2);
-    digitalWrite(ledPin_C, HIGH);
-    valbol_C = 1;
-
-  } else {
-    digitalWrite(ledPin_C, LOW);
-    valbol_C = 0;
-  }
-
-  delay(100);
 }
 
 void potenUmbral_A() {
